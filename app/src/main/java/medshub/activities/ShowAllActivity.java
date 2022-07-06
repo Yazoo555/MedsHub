@@ -54,7 +54,7 @@ public class ShowAllActivity extends AppCompatActivity {
 
         if (type == null || type.isEmpty()) {
 
-            firestore.collection("ShowAll")
+            firestore.collection("ShowAll").whereEqualTo("cat_id", 0)
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
@@ -75,44 +75,7 @@ public class ShowAllActivity extends AppCompatActivity {
 
         }
 
-        if (type != null && type.equalsIgnoreCase("pants")) {
-            firestore.collection("ShowAll").whereEqualTo("type", "pants")
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                            if (task.isSuccessful()) {
-                                for (DocumentSnapshot doc : task.getResult().getDocuments()) {
-
-                                    ShowAllModel showAllModel = doc.toObject(ShowAllModel.class);
-                                    showAllModelList.add(showAllModel);
-                                    showAllAdapter.notifyDataSetChanged();
-
-                                }
-                            }
-                        }
-                    });
-        }
-        if (type != null && type.equalsIgnoreCase("men")) {
-            firestore.collection("ShowAll").whereEqualTo("type", "men")
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                            if (task.isSuccessful()) {
-                                for (DocumentSnapshot doc : task.getResult().getDocuments()) {
-
-                                    ShowAllModel showAllModel = doc.toObject(ShowAllModel.class);
-                                    showAllModelList.add(showAllModel);
-                                    showAllAdapter.notifyDataSetChanged();
-
-                                }
-                            }
-                        }
-                    });
-        }
 
     }
 

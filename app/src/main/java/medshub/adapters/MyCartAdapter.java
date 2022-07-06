@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.medshub.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
@@ -29,11 +31,13 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     List<MyCartModel> list;
     FirebaseFirestore firestore;
     int totalAmount = 0;
+    private FirebaseAuth auth;
 
     public MyCartAdapter(Context context, List<MyCartModel> list) {
         this.context = context;
         this.list = list;
       this.firestore = FirebaseFirestore.getInstance();
+      this.auth = FirebaseAuth.getInstance();
     }
 
     @NonNull
@@ -67,7 +71,12 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
 
     }
     public void delete(String name){
-        firestore.collection("/AddToCart").document(name)
+       // Toast.makeText(this.,auth.getCurrentUser().getUid().toString()).show();
+//        firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
+//                .collection("User").get()
+        firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
+                .collection("User").document("\n" +
+                        "TlWd88DCnMntH9SUi03n")//.whereEqualTo("productName", name)
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
 

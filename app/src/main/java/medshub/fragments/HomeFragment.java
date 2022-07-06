@@ -160,7 +160,7 @@ LinearLayout linearLayout;
         newProductsAdapter=new NewProductsAdapter(getContext(),newProductsModelList);
         newProductRecyclerview.setAdapter(newProductsAdapter);
 
-        db.collection("NewProducts")
+        db.collection("ShowAll").whereEqualTo("isNew", true)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -186,7 +186,7 @@ LinearLayout linearLayout;
         popularProductsAdapter=new PopularProductsAdapter(getContext(),popularProductsModelList);
         popularRecyclerview.setAdapter(popularProductsAdapter);
 
-        db.collection("PopularProducts")
+        db.collection("ShowAll").whereEqualTo("isPopular", true)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

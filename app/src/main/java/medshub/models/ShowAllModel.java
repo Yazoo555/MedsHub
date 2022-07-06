@@ -10,6 +10,30 @@ public class ShowAllModel implements Serializable {
     int price;
     String img_url;
     String type;
+    Boolean isNew;
+    Boolean isPopular;
+    int cat_id;
+
+
+    public Boolean getNew() {
+        return isNew;
+    }
+
+    public void setNew(Boolean aNew) {
+        isNew = aNew;
+    }
+
+    public Boolean getPopular() {
+        return isPopular;
+    }
+
+    public void setPopular(Boolean popular) {
+        isPopular = popular;
+    }
+
+
+
+
 
     public ShowAllModel() {
     }
@@ -61,13 +85,23 @@ public class ShowAllModel implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
+    public int getCat_id() {
+        return cat_id;
+    }
 
-    public ShowAllModel(String description, String name, String rating, int price, String img_url, String type) {
+    public void setCat_id(int cat_id) {
+        this.cat_id = cat_id;
+    }
+
+    public ShowAllModel(String description, String name, String rating, int price, String img_url, String type, int cat_id, Boolean isNew, Boolean isPopular) {
         this.description = description;
         this.name = name;
         this.rating = rating;
         this.price = price;
         this.img_url = img_url;
         this.type = type;
+        this.cat_id = cat_id;
+        this.isNew = isNew;
+        this.isPopular = isPopular;
     }
 }
