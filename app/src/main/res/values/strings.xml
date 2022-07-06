@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MedsHub</string>
+    <string name="first_slide">Choose Your Products</string>
+    <string name="second_slide">Fast Delivery</string>
+    <string name="third_slide">Good Services</string>
+
+    <string name="description">A comprehensive study guide which summarises the basic principles in pharmacy practice. Lecture Notes in Pharmacy Practice comprises 70 concise chapters covering clinical pharmacy in both community and hospital settings, as well as the practice of pharmacy in other areas.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

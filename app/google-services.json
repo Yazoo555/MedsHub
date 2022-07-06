@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229998069235",
+    "project_id": "medshub-c9c88",
+    "storage_bucket": "medshub-c9c88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229998069235:android:f2555dc4832cf99f157e86",
+        "android_client_info": {
+          "package_name": "com.example.medshub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229998069235-rb8in75gon6tup2vo1dshl9boc586gr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD40a4vdoszZxyucTTY3BR0MP_P2OoW7Ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229998069235-rb8in75gon6tup2vo1dshl9boc586gr9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
