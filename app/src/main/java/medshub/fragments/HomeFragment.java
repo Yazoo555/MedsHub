@@ -64,6 +64,7 @@ LinearLayout linearLayout;
 
      public HomeFragment() {
         // Required empty public constructor
+         // github update check
     }
 
     @Override
